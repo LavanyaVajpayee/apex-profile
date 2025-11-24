@@ -20,10 +20,7 @@ const Index = () => {
             <PlayerHeader />
             <AchievementBadges />
             <PlayerMatchup />
-            <div className="grid grid-cols-1 gap-8">
-              <StatsTable />
-              <LoreSection />
-            </div>
+            <StatsTable />
           </div>
 
           {/* Right Column */}
@@ -32,6 +29,11 @@ const Index = () => {
             <SkillsGrid />
             <SignatureQuote />
           </div>
+        </div>
+        
+        {/* Lore Section - Full Width */}
+        <div className="mt-12">
+          <LoreSection />
         </div>
       </main>
     </div>
