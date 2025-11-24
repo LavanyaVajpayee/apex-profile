@@ -40,6 +40,8 @@ All colors MUST be HSL.
     
     --neon-cyan: 189 100% 50%;
     --neon-blue: 217 91% 60%;
+    --neon-magenta: 320 100% 65%;
+    --neon-purple: 280 100% 70%;
     --silver: 0 0% 75%;
     --glass-bg: 0 0% 10%;
     --neo-shadow: 0 0% 0%;
@@ -107,7 +109,7 @@ All colors MUST be HSL.
   .skill-hover-effect::before {
     content: '';
     @apply absolute inset-0 opacity-0 transition-all duration-500;
-    background: linear-gradient(90deg, transparent, hsl(var(--neon-cyan) / 0.3), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--neon-magenta) / 0.3), transparent);
     transform: translateX(-100%);
   }
   
