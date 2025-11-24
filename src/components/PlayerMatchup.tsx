@@ -1,9 +1,9 @@
 const matchups = [
-  { name: "HARDIK PANDYA", percentage: 75, color: "hsl(var(--neon-cyan))" },
-  { name: "ROHIT SHARMA", percentage: 95, color: "hsl(var(--neon-blue))" },
-  { name: "KL RAHUL", percentage: 65, color: "hsl(var(--neon-cyan))" },
-  { name: "BEN STOKES", percentage: 40, color: "hsl(var(--neon-purple))" },
-  { name: "JOE ROOT", percentage: 30, color: "hsl(var(--neon-magenta))" },
+  { name: "HARDIK PANDYA", percentage: 75, color: "#06b6d4", colorVar: "neon-cyan" },
+  { name: "ROHIT SHARMA", percentage: 95, color: "#60a5fa", colorVar: "neon-blue" },
+  { name: "KL RAHUL", percentage: 65, color: "#06b6d4", colorVar: "neon-cyan" },
+  { name: "BEN STOKES", percentage: 40, color: "#c084fc", colorVar: "neon-purple" },
+  { name: "JOE ROOT", percentage: 30, color: "#f472b6", colorVar: "neon-magenta" },
 ];
 
 const PlayerMatchup = () => {
@@ -12,25 +12,27 @@ const PlayerMatchup = () => {
       <h2 className="text-2xl font-display font-black tracking-tight text-foreground">
         PLAYER MATCHUP
       </h2>
-      <div className="flex items-end justify-between gap-4 h-64">
+      <div className="flex items-end justify-between gap-4 h-64 px-4">
         {matchups.map((player, index) => (
-          <div key={index} className="flex flex-col items-center gap-2 flex-1">
-            <div className="flex-1 w-full flex flex-col justify-end">
+          <div key={index} className="flex flex-col items-center gap-3 flex-1 min-w-0">
+            <div className="w-full flex flex-col justify-end items-center" style={{ height: '240px' }}>
               <div
-                className="w-full transition-all duration-1000 ease-out rounded-t-md relative"
+                className="w-full max-w-[50px] transition-all duration-1000 ease-out rounded-t-lg relative"
                 style={{
                   height: `${player.percentage}%`,
                   backgroundColor: player.color,
-                  boxShadow: `0 0 20px ${player.color}40`,
+                  boxShadow: `0 0 20px ${player.color}66`,
                 }}
               >
-                <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-sm font-bold whitespace-nowrap"
-                  style={{ color: player.color }}>
+                <span 
+                  className="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold whitespace-nowrap"
+                  style={{ color: player.color }}
+                >
                   {player.percentage}%
                 </span>
               </div>
             </div>
-            <span className="text-[10px] font-bold text-silver tracking-wide text-center transform -rotate-45 origin-center mt-4 whitespace-nowrap">
+            <span className="text-[9px] font-bold text-silver tracking-wide text-center whitespace-nowrap">
               {player.name}
             </span>
           </div>
